@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopZone - Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-left">
+            <div class="brand-hero">
+                <i class="fas fa-shopping-bag brand-icon"></i>
+                <h1>ShopZone</h1>
+                <p>Welcome back, shopper!</p>
+            </div>
+        </div>
+        <div class="auth-right">
+            <div class="auth-form-box">
+                <h2>Login</h2>
+                <p class="auth-subtitle">Sign in to continue shopping</p>
+                <form id="login-form" onsubmit="return handleLogin(event)">
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="login-email" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="login-password" placeholder="Password" required>
+                    </div>
+                    <div id="login-error" class="error-msg"></div>
+                    <button type="submit" class="btn-primary" id="btn-login">Login</button>
+                </form>
+                <p class="auth-switch">Don't have an account? <a href="register.html">Register</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

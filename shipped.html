@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopZone - Order Shipped</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-brand" onclick="location.href='index.html'">
+            <i class="fas fa-shopping-bag"></i> ShopZone
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="login.html">Logout</a>
+        </div>
+    </nav>
+    <div class="shipped-container">
+        <div class="shipped-card" id="shipped-card">
+            <div class="shipped-icon">
+                <i class="fas fa-truck"></i>
+            </div>
+            <h1>Order Shipped!</h1>
+            <p>Your order has been placed successfully and is on its way!</p>
+            <div class="order-details" id="order-details">
+                <p><strong>Order ID:</strong> <span id="order-id"></span></p>
+                <p><strong>Total:</strong> <span id="order-total"></span></p>
+                <p><strong>Estimated Delivery:</strong> <span id="order-delivery"></span></p>
+            </div>
+            <button class="btn-primary" onclick="location.href='index.html'">
+                <i class="fas fa-home"></i> Continue Shopping
+            </button>
+        </div>
+        <div class="social-share">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadOrderDetails();
+        });
+    </script>
+</body>
+
+</html>

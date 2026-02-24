@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopZone - Register</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-left">
+            <div class="brand-hero">
+                <i class="fas fa-shopping-bag brand-icon"></i>
+                <h1>ShopZone</h1>
+                <p>Your premium shopping destination</p>
+            </div>
+        </div>
+        <div class="auth-right">
+            <div class="auth-form-box">
+                <h2>Create Account</h2>
+                <p class="auth-subtitle">Join us and start shopping!</p>
+                <form id="register-form" onsubmit="return handleRegister(event)">
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="reg-username" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="reg-email" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="reg-phone" placeholder="Phone Number" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="reg-password" placeholder="Password" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="reg-confirm" placeholder="Confirm Password" required>
+                    </div>
+                    <div id="reg-error" class="error-msg"></div>
+                    <button type="submit" class="btn-primary" id="btn-register">Register</button>
+                </form>
+                <p class="auth-switch">Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

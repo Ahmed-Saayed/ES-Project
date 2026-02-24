@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopZone - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar-home">
+        <div class="nav-brand" onclick="location.href='index.html'">
+            <i class="fas fa-shopping-bag"></i> ShopZone
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="cart.html">Cart <span id="cart-count" class="badge">0</span></a>
+            <a href="login.html">Logout</a>
+        </div>
+        <div class="nav-user">
+            <i class="fas fa-user-circle"></i> <span id="nav-username">User</span>
+        </div>
+    </nav>
+
+    <!-- Slider -->
+    <section class="slider-section" id="slider-section">
+        <div class="slider" id="slider">
+            <div class="slide active" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <div class="slide-content">
+                    <h2>Summer Sale</h2>
+                    <p>Up to 50% off on all products</p>
+                    <button class="btn-slide"
+                        onclick="document.getElementById('products-section').scrollIntoView({behavior:'smooth'})">Shop
+                        Now</button>
+                </div>
+            </div>
+            <div class="slide" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <div class="slide-content">
+                    <h2>New Arrivals</h2>
+                    <p>Check out the latest collections</p>
+                    <button class="btn-slide"
+                        onclick="document.getElementById('products-section').scrollIntoView({behavior:'smooth'})">Explore</button>
+                </div>
+            </div>
+            <div class="slide" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <div class="slide-content">
+                    <h2>Free Shipping</h2>
+                    <p>On orders over $100</p>
+                    <button class="btn-slide"
+                        onclick="document.getElementById('products-section').scrollIntoView({behavior:'smooth'})">Learn
+                        More</button>
+                </div>
+            </div>
+        </div>
+        <button class="slider-btn prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+        <div class="slider-dots" id="slider-dots"></div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products-section">
+        <h2 class="section-title">Our Products</h2>
+        <div class="filter-bar" id="filter-bar">
+            <button class="filter-btn active" onclick="filterProducts('all', this)">All</button>
+            <button class="filter-btn" onclick="filterProducts('electronics', this)">Electronics</button>
+            <button class="filter-btn" onclick="filterProducts('clothing', this)">Clothing</button>
+            <button class="filter-btn" onclick="filterProducts('books', this)">Books</button>
+            <button class="filter-btn" onclick="filterProducts('accessories', this)">Accessories</button>
+        </div>
+        <div class="products-grid" id="products-grid"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3><i class="fas fa-shopping-bag"></i> ShopZone</h3>
+                <p>Your trusted online shopping destination since 2024.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">FAQ</a>
+            </div>
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ShopZone. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initSlider();
+            startSlider();
+            renderProducts('all');
+            updateCartCount();
+            const user = JSON.parse(localStorage.getItem('shopzone_user'));
+            if (user) document.getElementById('nav-username').textContent = user.username;
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopZone - Product Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-brand" onclick="location.href='index.html'">
+            <i class="fas fa-shopping-bag"></i> ShopZone
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="cart.html">Cart <span class="cart-count-sync badge">0</span></a>
+            <a href="login.html">Logout</a>
+        </div>
+    </nav>
+    <div class="product-detail-container" id="product-detail-container">
+        <div class="product-detail-image">
+            <img id="detail-img" src="" alt="Product">
+        </div>
+        <div class="product-detail-info">
+            <h1 id="detail-name"></h1>
+            <p class="detail-price" id="detail-price"></p>
+            <p class="detail-category" id="detail-category"></p>
+            <p class="detail-desc" id="detail-desc"></p>
+            <div class="detail-qty">
+                <label>Quantity:</label>
+                <button onclick="changeDetailQty(-1)" class="qty-btn">−</button>
+                <span id="detail-qty">1</span>
+                <button onclick="changeDetailQty(1)" class="qty-btn">+</button>
+            </div>
+            <button class="btn-add-cart" id="btn-add-cart" onclick="addToCartFromDetail()">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+            </button>
+            <button class="btn-back" onclick="location.href='index.html'"><i class="fas fa-arrow-left"></i> Back to
+                Shop</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProductDetail();
+            updateCartCount();
+        });
+    </script>
+</body>
+
+</html>
